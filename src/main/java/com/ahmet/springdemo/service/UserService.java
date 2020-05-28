@@ -28,6 +28,9 @@ public class UserService {
 
     public User updateUser(Long id, User user) throws Exception {
         User existingUser = getUserById(id);
+        existingUser.setFirstName(user.getFirstName());
+        existingUser.setLastName(user.getLastName());
+        existingUser.setEmail(user.getEmail());
         return userRepository.save(user);
     }
 
